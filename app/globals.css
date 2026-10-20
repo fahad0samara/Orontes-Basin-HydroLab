@@ -1,0 +1,147 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: var(--font-arabic), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), var(--font-arabic), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom crisp scrollbar for GIS dock tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f17;
+}
+::-webkit-scrollbar-thumb {
+  background: #263042;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+.leaflet-container {
+  background: #070a10 !important;
+  font-family: var(--font-mono), monospace !important;
+  width: 100%;
+  height: 100%;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+.leaflet-tooltip,
+.leaflet-popup-content {
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: var(--font-sans), sans-serif !important;
+}
+
+.leaflet-tooltip {
+  background-color: rgba(11, 14, 23, 0.96) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  color: #f1f5f9 !important;
+  border-radius: 4px !important;
+  padding: 6px 9px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.75) !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: rgba(56, 189, 248, 0.45) !important;
+}
+.leaflet-tooltip-bottom:before {
+  border-bottom-color: rgba(56, 189, 248, 0.45) !important;
+}
+.leaflet-tooltip-left:before {
+  border-left-color: rgba(56, 189, 248, 0.45) !important;
+}
+.leaflet-tooltip-right:before {
+  border-right-color: rgba(56, 189, 248, 0.45) !important;
+}
+
+.leaflet-bar {
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-bar a {
+  background-color: #0b0e17 !important;
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid #1e293b !important;
+  width: 26px !important;
+  height: 26px !important;
+  line-height: 26px !important;
+  font-size: 14px !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #111827 !important;
+  color: #38bdf8 !important;
+}
+
+.leaflet-control-scale-line {
+  background: rgba(11, 14, 23, 0.88) !important;
+  border-color: #38bdf8 !important;
+  color: #e2e8f0 !important;
+  font-family: var(--font-mono), monospace !important;
+  font-size: 9.5px !important;
+  padding: 1px 5px !important;
+  text-shadow: none !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(9, 13, 22, 0.78) !important;
+  color: #64748b !important;
+  font-size: 9px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #94a3b8 !important;
+}
+
+.orontes-chart-svg {
+  direction: ltr !important;
+}
+
+.orontes-chart-svg text {
+  direction: ltr !important;
+  unicode-bidi: plaintext;
+}
+
+/* Smooth CSS cross-fade transitions for Map Raster Overlay Layer */
+.orontes-raster-overlay {
+  transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Clean custom DivIcons with zero default Leaflet white square or border */
+.orontes-sar-badge,
+.orontes-flow-arrow,
+.orontes-landmark-label {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Simplified Mobile / Low-Power Rendering Mode */
+.orontes-simplified-mode .orontes-chart-svg,
+.orontes-simplified-mode .orontes-chart-svg *,
+.orontes-simplified-mode .orontes-sar-badge,
+.orontes-simplified-mode .orontes-flow-arrow {
+  transition: none !important;
+  animation: none !important;
+  filter: none !important;
+  shape-rendering: optimizeSpeed;
+}
+
+.orontes-simplified-mode .orontes-raster-overlay {
+  transition: opacity 100ms linear !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orontes-raster-overlay,
+  .orontes-sar-badge,
+  .orontes-flow-arrow {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

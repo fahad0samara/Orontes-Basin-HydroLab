@@ -1,0 +1,6 @@
+{
+  "name": "Orontes Basin HydroLab — نهر العاصي",
+  "description": "Hydrological flow accumulation, Topographic Wetness Index (TWI), CHIRPS weighted overlay flood susceptibility, and agricultural drainage modeling for the Al-Ghab Plain and Orontes River Valley.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
